@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-  $baseRoute = $_SERVER['BASE_URI'];
+  $baseRoute = $_SERVER['BASE_URI'] ?? "/";
 ?>
 <head>
   <meta charset="UTF-8">

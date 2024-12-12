@@ -11,7 +11,7 @@ $router = new AltoRouter();
 
 // On fournit à AltoRouter la partie de l'URL à ne pa sprendre en compte pour faire la comparaison entre l'URL courante et l'url de la route
 // LA valeur de $_SERVER['BASE_URI'] est donnée par le fichier .htaccess. Elle correspond au chemin de la racine du site, ici se termine par public
-$router->setBasePath($_SERVER['BASE_URI']); // Je définis le chemin de base => ce par quoi mes routes vont commencer (localhost/.../public)
+$router->setBasePath($_SERVER['BASE_URI'] ?? ''); // Je définis le chemin de base => ce par quoi mes routes vont commencer (localhost/.../public)
 
 // Ici, je créer mes routes (https://altorouter.com/usage/mapping-routes.html)
 
