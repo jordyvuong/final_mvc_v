@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="<?=$absoluteURL?>/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$absoluteURL?>/assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?=$absoluteURL?>/assets/css/styles.css">
-  <title>oShop</title>
+  <title>La faille de l'invocateur</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light">
       <div class="container-fluid">
         <!-- Navbar Header  -->
-        <a href="index.html" class="navbar-brand">oShop</a>
+        <a href="index.html" class="navbar-brand">La faille de l'invocateur</a>
         <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
           aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
         <!-- Navbar Collapse -->
@@ -45,11 +45,13 @@
               <div class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Catégories</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <?php foreach($categories as $currentCategory): ?>
-                    <!-- <a class="dropdown-item" href="<?=$absoluteURL.'/catalogue/categorie/'.$currentCategory->getId()?>"><?=$currentCategory->getName()?></a> -->
-                    <a class="dropdown-item" href="<?=$router->generate('catalog-category', ['id' => $currentCategory->getId()])?>"><?=$currentCategory->getName()?></a>
-
-                  <?php endforeach ?>
+                  <?php if (isset($categories) && is_array($categories)) : ?>
+                    <?php foreach($categories as $currentCategory): ?>
+                      <a class="dropdown-item" href="<?=$router->generate('catalog-category', ['id' => $currentCategory->getId()])?>"><?=$currentCategory->getName()?></a>
+                    <?php endforeach; ?>
+                  <?php else : ?>
+                    <a class="dropdown-item" href="#">Aucune catégorie disponible</a>
+                  <?php endif; ?>
                 </div>
               </div>
             </li>
@@ -57,9 +59,13 @@
               <div class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Types de produits</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <?php foreach($types as $currentType): ?>
-                    <a class="dropdown-item" href="<?=$router->generate('catalog-type', ['id' => $currentType->getId()])?>"><?=$currentType->getName()?></a>
-                  <?php endforeach ?>
+                  <?php if (isset($types) && is_array($types)) : ?>
+                    <?php foreach($types as $currentType): ?>
+                      <a class="dropdown-item" href="<?=$router->generate('catalog-type', ['id' => $currentType->getId()])?>"><?=$currentType->getName()?></a>
+                    <?php endforeach; ?>
+                  <?php else : ?>
+                    <a class="dropdown-item" href="#">Aucun type disponible</a>
+                  <?php endif; ?>
                 </div>
               </div>
             </li>
@@ -67,9 +73,13 @@
               <div class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Marques</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <?php foreach($brands as $currentBrand): ?>
-                    <a class="dropdown-item" href="<?=$router->generate('catalog-brand', ['id' => $currentBrand->getId()])?>"><?=$currentBrand->getName()?></a>
-                  <?php endforeach ?>
+                  <?php if (isset($brands) && is_array($brands)) : ?>
+                    <?php foreach($brands as $currentBrand): ?>
+                      <a class="dropdown-item" href="<?=$router->generate('catalog-brand', ['id' => $currentBrand->getId()])?>"><?=$currentBrand->getName()?></a>
+                    <?php endforeach; ?>
+                  <?php else : ?>
+                    <a class="dropdown-item" href="#">Aucune marque disponible</a>
+                  <?php endif; ?>
                 </div>
               </div>
             </li>

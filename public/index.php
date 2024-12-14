@@ -22,6 +22,10 @@ $router->addRoutes(array(
         'controller' => MainController::class, // Dans quel controller ?
         'action' => 'home' // Quelle méthode dans ce controller ?
     ], 'home'),
+    array('GET','/products', [
+        'controller' => MainController::class, // le namespace nom de la classe + le nom de la classe (concatenation) 
+        'action' => 'productList'
+    ], 'products'),
     array('GET','/mentions-legales', [
         'controller' => MainController::class, // le namespace nom de la classe + le nom de la classe (concatenation) 
         'action' => 'legalMentions'
@@ -46,6 +50,7 @@ $router->addRoutes(array(
         'controller' => MainController::class,
         'action' => 'test'
     ])
+
   ));
 
 // Ici on check si la route sur laquelle on est a bien été mappé

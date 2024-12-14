@@ -177,3 +177,18 @@ background: #f8f9fa;
   padding-right: 1rem;
   margin-right: 1rem;
 }
+
+.product-image {
+  width: 100%; /* S'adapte à la largeur de la colonne */
+  height: 200px; /* Hauteur uniforme pour toutes les images */
+  overflow: hidden; /* Cache les débordements, si nécessaire */
+  position: relative; /* Nécessaire pour certaines mises en page */
+  background-color: #f8f9fa; /* Arrière-plan pour les espaces vides */
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Redimensionne sans recadrage */
+  display: block;
+}
