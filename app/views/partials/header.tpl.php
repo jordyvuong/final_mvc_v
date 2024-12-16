@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light">
       <div class="container-fluid">
         <!-- Navbar Header  -->
-        <a href="index.html" class="navbar-brand">La faille de l'invocateur</a>
+        <a href="/" class="navbar-brand">La faille de l'invocateur</a>
         <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
           aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
         <!-- Navbar Collapse -->
@@ -69,17 +69,7 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Marques</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <?php if (isset($brands) && is_array($brands)) : ?>
-                    <?php foreach($brands as $currentBrand): ?>
-                      <a class="dropdown-item" href="<?=$router->generate('catalog-brand', ['id' => $currentBrand->getId()])?>"><?=$currentBrand->getName()?></a>
-                    <?php endforeach; ?>
-                  <?php else : ?>
-                    <a class="dropdown-item" href="#">Aucune marque disponible</a>
-                  <?php endif; ?>
+
                 </div>
               </div>
             </li>

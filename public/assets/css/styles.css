@@ -192,3 +192,6 @@ background: #f8f9fa;
   object-fit: contain; /* Redimensionne sans recadrage */
   display: block;
 }
+.custom-heading {
+text-shadow:black 1px 1px 1px;
+}

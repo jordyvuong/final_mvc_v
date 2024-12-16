@@ -32,7 +32,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="font-weight-bold text-uppercase text-lg text-dark mb-3">oShop</div>
+            <div class="font-weight-bold text-uppercase text-lg text-dark mb-3">La faille de l'invocateur</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
             <ul class="list-inline">
               <li class="list-inline-item">
@@ -87,7 +87,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-3 text-center text-md-left">
-            <p class="mb-md-0">Tous droits réservés<br>© 2020 oShop</p>
+            <p class="mb-md-0">Tous droits réservés<br>© 2024 La faille de l'invocateur</p>
           </div>
           <div class="col-md-6 text-center">
             <p class="mb-md-0"><a class="text-white" href="#">Mentions légales</a><br><a class="text-white" href="#">Conditions générales de vente</a></p>
